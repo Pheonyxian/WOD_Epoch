@@ -171,66 +171,81 @@ function changeAbilitiesTable(game) {
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
+            skill3.textContent = "Drive:";
             break;
         case "vtm":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
+            skill3.textContent = "Drive:";
             break;
         case "wta":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
+            skill3.textContent = "Drive:";
             break;
         case "omage":
             skill1.textContent = "Crafts:";
             talent2.textContent = "Art:";
             skill2.textContent = "Drive:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Athletics:";
+            skill3.textContent = "Etiquette:";
             break;
         case "wrto":
             skill1.textContent = "Crafts:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Drive:";
             knowledges2.textContent = "Beaurocracy:";
+            talent3.textContent = "Awareness:";
             break;
         case "ctd":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
             break;
         case "htr":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
             break;
         case "htr20_mrgone":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
             break;
         case "htr20_epoch":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
             break;
         case "dtf":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
             break;
         case "dtf20":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
             break;
         default:
             break;
@@ -240,12 +255,17 @@ function changeAbilitiesTable(game) {
 }
 
 function changeAbilitiesSavageAge() {
-    var shouldChange = document.querySelector('input[id="savage_age"]').checked;
+    var isSavageAge = document.querySelector('input[id="savage_age"]').checked;
+    var isDarkAge = document.querySelector('input[id="dark_ages').checked;
     var knowledges1 = document.getElementById("knowledge1_label");
     var knowledges2 = document.getElementById("knowledge2_label");
-    if(shouldChange) {
+    if(isSavageAge) {
         knowledges1.textContent = "Hearth Wisdom:";
         knowledges2.textContent = "Legends";
+    }
+    else if(isDarkAge) {
+        knowledges1.textContent = "Academics";
+        knowledges2.textContent = "Hearth Wisdom:";
     }
     else {
         knowledges1.textContent = "Academics";
