@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body>	
+<body>
 	<center><table id="sheetgen_options">
 		<tr>
 			<th colspan="6" class="optionstable"><center>Sheet Options</center></th>
@@ -70,34 +70,34 @@
 		</tr>
 		</table></center>
 	<h1>Sheet Generation Test</h1>
-	<div class="mainbody">
-	  <div class="section1" id="character_basics">
+	<center><div class="mainbody">
+	  <center><div class="section1" id="character_basics">
 		  <h2>Basics</h2>
 	    <table class="basicstable">
 		 	 <tr>
 				 <!-- Anything besides the Name/Player/Chronicle categories changes per game line; Werewolf adds Nature and Demeanor categories in a row underneath the standard 9 top categories -->
 				  <th id="charactername">Name:</th>
-				  <td><input type="text" name="charname_input" id="input1" size="35"></td>
+				  <td><input type="text" name="charname_input" id="input1"></td>
 				  <th id="variablecat1">Nature:</th>
-				  <td><input type="text" name="var_input1" id="input2" size="35"></td>
+				  <td><input type="text" name="var_input1" id="input2"></td>
 				  <th id="variablecat4">Age:</th>
-				  <td><input type="text" name="var_input4" id="input3" size="35"></td>
+				  <td><input type="text" name="var_input4" id="input3"></td>
 		  </tr>
 			  <tr>
 				  <th id="characterowner">Player:</th>
-				  <td><input type="text" name="player_input" id="input4" size="35"></td>
+				  <td><input type="text" name="player_input" id="input4"></td>
 				  <th id="variablecat2">Demeanor:</th>
-				  <td><input type="text" name="var_input2" id="input5" size="35"></td>
+				  <td><input type="text" name="var_input2" id="input5"></td>
 				  <th id="variablecat5">Group:</th>
-				  <td><input type="text" name="var_input5" id="input6" size="35"></td>
+				  <td><input type="text" name="var_input5" id="input6"></td>
 			  </tr>
 		  <tr>
 		    <th id="gamename">Chronicle:</th>
-				  <td><input type="text" name="chron_input" id="input7" size="35"></td>
+				  <td><input type="text" name="chron_input" id="input7"></td>
 		    <th id="variablecat3">Concept:</th>
-				  <td><input type="text" name="var_input3" id="input8" size="35"></td>
+				  <td><input type="text" name="var_input3" id="input8"></td>
 		    <th id="variablecat6">Other:</th>
-				  <td><input type="text" name="var_input6" id="input9" size="35"></td>
+				  <td><input type="text" name="var_input6" id="input9"></td>
 		  </tr>
 			<!-- Additional Nature and Demeanor row to be utilized by Werewolf -->
 			<tr>
@@ -107,8 +107,8 @@
 				<td id="wta_demeanor" style="display:none" colspan="2"><input type="text" name="wta_demeanorinput" id="wta_demeanorinput"></td>
 			</tr>
 		  </table> 
-		 </div>
-		<div class="section1" id="character_attributes">
+		  </div></center>
+		<center><div class="section1" id="character_attributes">
 			<h2>Attributes</h2>
 			<!-- Attributes do not change per game line, most of the function here is going to be in making the overcap checkbox work 
 				Attributes never go below 1 except in edge cases (see: Nosferatu weakness); including edge cases is for the pathbuilder-alike only-->
@@ -126,44 +126,44 @@
 						</div></td>
 					<th id="charisma">Charisma:</th>
 					<td id="charisma_dots"><div class="container">
-							<input type="button" id="cha_add" value="+" onclick="addValue('cha_counter')"><div id="cha_counter" class="counter">1</div><input type="button" id="cha-subtract" value="-" onclick="subtractValue('cha_counter')">
+						<input type="button" id="cha_add" value="+" onclick="addValue('cha_counter')"><div id="cha_counter" class="counter">1</div><input type="button" id="cha-subtract" value="-" onclick="subtractValue('cha_counter')">
 						</div></td>
 					<th id="perception">Perception:</th>
 					<td id="perception_dots"><div class="container">
-							<input type="button" id="per_add" value="+" onclick="addValue('per_counter')"><div id="per_counter" class="counter">1</div><input type="button" id="per-subtract" value="-" onclick="subtractValue('per_counter')">
+						<input type="button" id="per_add" value="+" onclick="addValue('per_counter')"><div id="per_counter" class="counter">1</div><input type="button" id="per-subtract" value="-" onclick="subtractValue('per_counter')">
 						</div></td>
 				</tr>
 				<tr>
 					<th id="dexterity">Dexterity:</th>
 					<td id="dexterity_dots"><div class="container">
-							<input type="button" id="dex_add" value="+" onclick="addValue('dex_counter')"><div id="dex_counter" class="counter">1</div><input type="button" id="dex-subtract" value="-" onclick="subtractValue('dex_counter')">
+						<input type="button" id="dex_add" value="+" onclick="addValue('dex_counter')"><div id="dex_counter" class="counter">1</div><input type="button" id="dex-subtract" value="-" onclick="subtractValue('dex_counter')">
 						</div></td>
 					<th id="manipulation">Manipulation:</th>
 					<td id="manipulation_dots"><div class="container">
-							<input type="button" id="man_add" value="+" onclick="addValue('man_counter')"><div id="man_counter" class="counter">1</div><input type="button" id="man-subtract" value="-" onclick="subtractValue('man_counter')">
+						<input type="button" id="man_add" value="+" onclick="addValue('man_counter')"><div id="man_counter" class="counter">1</div><input type="button" id="man-subtract" value="-" onclick="subtractValue('man_counter')">
 						</div></td>
 					<th id="intelligence">Intelligence:</th>
 					<td id="intelligence_dots"><div class="container">
-							<input type="button" id="int_add" value="+" onclick="addValue('int_counter')"><div id="int_counter" class="counter">1</div><input type="button" id="int-subtract" value="-" onclick="subtractValue('int_counter')">
+						<input type="button" id="int_add" value="+" onclick="addValue('int_counter')"><div id="int_counter" class="counter">1</div><input type="button" id="int-subtract" value="-" onclick="subtractValue('int_counter')">
 						</div></td>
 				</tr>
 				<tr>
 					<th id="stamina">Stamina:</th>
 					<td id="stamina_dots"><div class="container">
-							<input type="button" id="stam_add" value="+" onclick="addValue('stam_counter')"><div id="stam_counter" class="counter">1</div><input type="button" id="stam-subtract" value="-" onclick="subtractValue('stam_counter')">
+						<input type="button" id="stam_add" value="+" onclick="addValue('stam_counter')"><div id="stam_counter" class="counter">1</div><input type="button" id="stam-subtract" value="-" onclick="subtractValue('stam_counter')">
 						</div></td>
 					<th id="appearance">Appearance:</th>
 					<td id="appearance_dots"><div class="container">
-							<input type="button" id="app_add" value="+" onclick="addValue('app_counter')"><div id="app_counter" class="counter">1</div><input type="button" id="app-subtract" value="-" onclick="subtractValue('app_counter')">
+						<input type="button" id="app_add" value="+" onclick="addValue('app_counter')"><div id="app_counter" class="counter">1</div><input type="button" id="app-subtract" value="-" onclick="subtractValue('app_counter')">
 						</div></td>
 					<th id="wits">Wits:</th>
 					<td id="wits_dots"><div class="container">
-							<input type="button" id="wits_add" value="+" onclick="addValue('wits_counter')"><div id="wits_counter" class="counter">1</div><input type="button" id="wits-subtract" value="-" onclick="subtractValue('wits_counter')">
+						<input type="button" id="wits_add" value="+" onclick="addValue('wits_counter')"><div id="wits_counter" class="counter">1</div><input type="button" id="wits-subtract" value="-" onclick="subtractValue('wits_counter')">
 						</div></td>
 				</tr>
 			</table>
-		</div>
-		<div class="section1">
+			</div></center>
+		<center><div class="section1">
 			<h2>Abilities</h2>
 			<!-- Abilities change per game and time period, changed Abilities will be noted before their cell 
 				NOTE: Games that never got a 20th have more than 10 abilities per category, and so does Mage 20 for some reason - choosing to worry about the sheets made to use 20th's standard before worrying about incorporating the originals -->
@@ -379,12 +379,12 @@
 						</div></td>
 			    </tr>
 			</table>
-		</div>
-		<div class="section1">
+		</div></center>
+		<center><div class="section1">
 			<!-- Additional Ability rows should be addable and subtractable with the two buttons for as many categories as the player wants -->
 			<h2>Additional Abilities</h2>
 			<div class="container">
-			<div class="contained">
+			<div class="contained1">
 				<h3>Hobby Talents</h3>
 				<div id="talentrow" class="container">
 				<input type="text" id="input_talent" name="extratalent_input" size="10"><strong>:</strong> 
@@ -394,7 +394,7 @@
 				<input type="button" value="+" name="add_talent" id="add_talent"><input type="button" value="-" name="subtract_talent" id="subtract_talent">
 				</div>
 			</div>
-			<div class="contained">
+			<div class="contained1">
 				<h3>Professional Skills</h3>
 				<div id="skillrow" class="container">
 				<input type="text" id="input_skill" name="extraskill_input" size="10"><strong>:</strong> 
@@ -404,7 +404,7 @@
 				<input type="button" value="+" name="add_skill" id="add_skill"><input type="button" value="-" name="subtract_skill" id="subtract_skill">
 				</div>
 			</div>
-			<div class="contained">
+			<div class="contained1">
 				<h3>Expert Knowledges</h3>
 				<div id="knowledgerow" class="container">
 				<input type="text" id="input_knowledge" name="extraknowledge_input" size="10"><strong>:</strong> 
@@ -415,12 +415,12 @@
 				</div>
 		    </div>
 			</div>
-		</div>
-		<div class="section1">
+		</div></center>
+		<center><div class="section1">
 			<p>&nbsp;</p>
 			<h2>Advantages</h2>
 			<div class="container">
-				<div class="contained">
+				<div class="contained2">
 					<h3>Backgrounds</h3>
 					<table class="headertable">
 						<tr>
@@ -429,7 +429,7 @@
 						</tr>
 					</table>
 						<div class="container">
-						<input type="text" id="input_bg" name="bg_input" size="10"><strong>:</strong> 
+						<input type="text" id="input_bg" name="bg_input"><strong>:</strong> 
 							<input type="button" id="bgdot_add" value="+"><div class="counter">0</div><input type="button" id="bgdot-subtract" value="-">
 				</div>
 				<div id="bgbuttons">
@@ -437,7 +437,7 @@
 				</div>
 				</div>
 				<!-- Powers are called Disciplines in VtM, Gifts in WtA, Spheres (which are their own category) in MtAs, Arcanoi in WtO, Arts in CtD, Edges in HtR, and Lores in DtF. Of the powers that can be listed in this category rather than having their own, only VtM Disciplines (which go to 9, and occasionally 10) and WtA Gifts (which very rarely reach level 6) are potentially affected by Overcap Mode. Gifts and Edges are not technically rated with dots and use the term 'Level' instead -->
-				<div class="contained" id="powers">
+				<div class="contained2" id="powers">
 					<h3 id="power_name">Powers</h3>
 					<table class="headertable">
 						<tr>
@@ -446,7 +446,7 @@
 						</tr>
 					</table>
 						<div class="container">
-						<input type="text" id="input_power" name="power_input" size="10"><strong>:</strong> 
+						<input type="text" id="input_power" name="power_input"><strong>:</strong> 
 							<input type="button" id="powerlevel_add" value="+"><div class="counter">0</div><input type="button" id="powerlevel-subtract" value="-">
 				</div>
 				<div id="powerbuttons">
@@ -454,7 +454,7 @@
 				</div>
 				</div>
 				<!-- Mage's Spheres are formatted differently to the power set of all the other games, so its power category needs to be separated. Spheres for ordinary Mages go to 5, Overcap Mode should let them go to 10 -->
-				<div class="contained" id="mtas_spheres" style="display:none">
+				<div class="contained2" id="mtas_spheres" style="display:none">
 					<h3>Spheres</h3>
 					<table>
 						<tr>
@@ -527,8 +527,41 @@
 						</tr>
 					</table>
 				</div>
+				<!-- A separate Backgrounds and Powers category is provided here using the contained1 style (the shorter one) in order to account for games where this section of the Advantages) category has three rows. These are as follows: Vampire, Demon and Hunter (with their respective Virtues categories), Changeling (with its Realms category), and Wraith (with its Passions category). For these, the correct order of categories (from left to right) is: Backgrounds, Powers, Special Category. -->
+				<div class="contained2" style="display:none">
+					<h3>Backgrounds</h3>
+					<table class="headertable">
+						<tr>
+							<th class="headerbig">Background:</th>
+							<th class="headersmall">Dots:</th>
+						</tr>
+					</table>
+						<div class="container">
+						<input type="text" id="input_bg2" name="bg_input" size="10"><strong>:</strong> 
+							<input type="button" id="bgdot_add2" value="+"><div class="counter">0</div><input type="button" id="bgdot-subtract2" value="-">
+				</div>
+				<div id="bgbuttons2">
+				<input type="button" value="+" name="add_bg" id="add_bg2"><input type="button" value="-" name="subtract_bg" id="subtract_bg2">
+				</div>
+				</div>
+				<div class="contained1" id="powers2" style="display:none">
+					<h3 id="power_name2">Powers</h3>
+					<table class="headertable">
+						<tr>
+							<th class="headerbig" id="power_head2">Power:</th>
+							<th class="headersmall" id="power_levels2">Dots:</th>
+						</tr>
+					</table>
+						<div class="container">
+						<input type="text" id="input_power2" name="power_input" size="10"><strong>:</strong> 
+							<input type="button" id="powerlevel_add2" value="+"><div class="counter">0</div><input type="button" id="powerlevel-subtract2" value="-">
+				</div>
+				<div id="powerbuttons2">
+				<input type="button" value="+" name="add_power" id="add_power2"><input type="button" value="-" name="subtract_power" id="subtract_power2">
+				</div>
+				</div>
 				<!-- The Realms category is only used by Changeling, but unlike Mage's spheres, appears alongside the standard powers category. Changeling Realms and Arts do not go past 5 and shouldn't be affected by Overcap Mode -->
-				<div class="contained" id="ctd_realms" style="display:none">
+				<div class="contained1" id="ctd_realms" style="display:none">
 					<h3>Realms</h3>
 					<table>
 						<tr>
@@ -574,7 +607,7 @@
 					</table>
 				</div>
 				<!-- This Virtues category only shows for Vampire. Vampire Virtues cannot go below 1, only go to 5, and should not be affected by Overcap Mode -->
-				<div class="contained" id="vtm_virtues" style="display:none">
+				<div class="contained1" id="vtm_virtues" style="display:none">
 					<h3>Virtues</h3>
 					<table>
 						<tr>
@@ -598,7 +631,7 @@
 					</table>
 				</div>
 				<!-- This Virtues category is only used for Hunter. Hunter Virtues go to 10 and are not affected by Overcap Mode -->
-				<div class="contained" id="htr_virtues" style="display:none">
+				<div class="contained1" id="htr_virtues" style="display:none">
 					<h3>Virtues</h3>
 					<table>
 						<tr>
@@ -620,7 +653,7 @@
 					</table>
 				</div>
 				<!-- This Virtues category is only used by Demon. Demon Virtues cannot go below 1, do not go above 5 and shouldn't be affected by Overcap Mode-->
-				<div class="contained" id="dtf_virtues" style="display:none">
+				<div class="contained1" id="dtf_virtues" style="display:none">
 					<h3>Virtues</h3>
 					<table>
 						<tr>
@@ -644,7 +677,7 @@
 					</table>
 				</div>
 				<!-- The Passions category is only used by Wraith. Passions only go up to 5 and should not be affected by Overcap Mode -->
-				<div class="contained" id="passions" style="display:none">
+				<div class="contained1" id="passions" style="display:none">
 					<h3>Passions</h3>
 					<div class="container">
 						<input type="text" id="input_passion" name="passion_input" size="10"><strong>:</strong> 
@@ -657,7 +690,7 @@
 			</div>
 			<div class="container">
 				<!-- Renown section only shows for Werewolf. Permanent Renown only goes up to 10 and should not be affected by Overcap Mode -->
-				<div class="contained" id="renown_section" style="display:none">
+				<div class="contained1" id="renown_section" style="display:none">
 					<h3>Renown</h3>
 					<table>
 						<tr>
@@ -699,7 +732,7 @@
 					</table>
 				</div>
 				<!-- The Other Stats category functions on a per-game basis. Unless explicitly otherwise stated, assume all trackers cap at 10 and are not affected by Overcap. Change what you need to, but all possible configurations are included here for convenience -->
-				<div class="contained" id="genwod_otherstats">
+				<div class="contained2" id="genwod_otherstats">
 					<h3>Other Stats</h3>
 					<!-- Generic WoD Sheet -->
 					<table>
@@ -742,7 +775,7 @@
 					</table>
 				</div>
 				<!-- VtM Other Stats Tracker -->
-				<div class="contained" id="vtm_otherstats" style="display:none">
+				<div class="contained2" id="vtm_otherstats" style="display:none">
 					<h3>Other Stats</h3>
 					<table>
 						<tr>
@@ -773,7 +806,7 @@
 					</table>
 				</div>
 				<!-- WtA Other Stats Tracker -->
-				<div class="contained" id="wta_otherstats" style="display:none">
+				<div class="contained2" id="wta_otherstats" style="display:none">
 					<h3>Other Stats</h3>
 					<table>
 						<tr>
@@ -815,7 +848,7 @@
 					</table>
 				</div>
 				<!-- Mage Other Stats Tracker -->
-				<div class="contained" id="mtas_otherstats" style="display:none">
+				<div class="contained2" id="mtas_otherstats" style="display:none">
 					<h3>Other Stats</h3>
 					<table>
 						<tr>
@@ -852,7 +885,7 @@
 					</table>
 				</div>
 				<!-- Wraith Other Stats Tracker -->
-				<div class="contained" id="wto_otherstats" style="display:none">
+				<div class="contained2" id="wto_otherstats" style="display:none">
 					<h3>Other Stats</h3>
 					<table>
 						<!-- Current Corpus cannot be higher than Max Corpus -->
@@ -890,7 +923,7 @@
 					</table>
 				</div>
 				<!-- Changeling Other Stats Tracker -->
-				<div class="contained" id="ctd_otherstats" style="display:none">
+				<div class="contained2" id="ctd_otherstats" style="display:none">
 					<h3>Other Stats</h3>
 					<table>
 						<tr>
@@ -932,7 +965,7 @@
 					</table>
 				</div>
 				<!-- Hunter Other Stats Tracker -->
-				<div class="contained" id="htr_otherstats" style="display:none">
+				<div class="contained2" id="htr_otherstats" style="display:none">
 					<h3>Other Stats</h3>
 					<table>
 						<tr>
@@ -956,7 +989,7 @@
 					</table>
 				</div>
 				<!-- Demon Other Stats Tracker -->
-				<div class="contained" id="dtf_otherstats" style="display:none">
+				<div class="contained2" id="dtf_otherstats" style="display:none">
 					<h3>Other Stats</h3>
 					<table>
 						<tr>
@@ -998,7 +1031,7 @@
 					</table>
 				</div>
 				<!-- Wraith doesn't have a Health Level tracker - this is replaced with Corpus in the Other Stats category -->
-			  <div class="contained" id="health_tracker">
+			  <div class="contained2" id="health_tracker">
 				<h3>Health</h3>
 					<table>
 						<tr>
@@ -1052,10 +1085,10 @@
 				  </table>
                 </div>
 				<!-- The Fetters category is only used by Wraith. Fetters only go to 5 and are not affected by Overcap -->
-				<div class="contained" id="fetters" style="display:none">
+				<div class="contained2" id="fetters" style="display:none">
 					<h3>Fetters</h3>
 					<div class="container">
-						<input type="text" id="input_fetter" name="fetter_input" size="10"><strong>:</strong> 
+						<input type="text" id="input_fetter" name="fetter_input" size="30"><strong>:</strong> 
 							<input type="button" id="fetterdot_add" value="+"><div class="counter">0</div><input type="button" id="fetterdot-subtract" value="-">
 				</div>
 				<div id="fetterbuttons">
@@ -1063,13 +1096,13 @@
 				</div>
 				</div>
 			</div>
-		</div>
+		</div></center>
 		<!-- Merits and Flaws aren't used in Wraith 20 and should be hidden on that sheet -->
-		<div class="section1" id="merits_flaws">
+		<center><div class="section1" id="merits_flaws">
 			<p>&nbsp;</p>
 			<h2>Merits and Flaws</h2>
 			<div class="container">
-				<div class="contained">
+				<div class="contained2">
 					<h3>Flaws</h3>
 					<table class="headertable">
 						<tr>
@@ -1082,7 +1115,7 @@
 			  <input type="button" value="+" name="add_flaw" id="add_flaw"><input type="button" value="-" name="subtract_flaw" id="subtract_flaw">
 			  </div>
 				</div>
-				<div class="contained">
+				<div class="contained2">
 					<h3>Merits</h3>
 					<table class="headertable">
 						<tr>
@@ -1096,9 +1129,9 @@
 			  </div>
 				</div>
 			</div>
-		</div>
+		</div></center>
 		<!-- The Form Changes section is only used by Werewolf. Options are displayed based on the shifter type chosen in the dropdown-->
-		<div class="section1" id="wta_formchanges" style="display:none">
+		<center><div class="section1" id="wta_formchanges" style="display:none">
 			<p>&nbsp;</p>
 			<h2>Form Changes</h2>
 			<div class="container" id="forms_dropdown">
@@ -1138,11 +1171,11 @@
 				</select>
 			</div>
 			<div class="container" id="garou_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<center><p>No Changes</p></center>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Glabro</h3>
 					<center><p>Strength (+2)
 					<br />Stamina (+2)
@@ -1150,7 +1183,7 @@
 					<br />Appearance (-1)
 						<br />Difficulty: 7</p></center>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength (+4) 
 					<br />Dexterity (+1) 
@@ -1160,7 +1193,7 @@
 					<br />Difficulty: 6 
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Hispo</h3>
 					<p><center>Strength (+3)
 					<br />Dexterity (+2)
@@ -1169,7 +1202,7 @@
 					<br />Difficulty: 7
 					<br />+1 to Bite Damage</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Lupus</h3>
 					<p><center>Strength (+1)
 					<br />Dexterity (+2)
@@ -1180,11 +1213,11 @@
 				</div>
 			</div>
 			<div class="container" id="ajaba_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Anthros</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +1
@@ -1193,7 +1226,7 @@
 					<br />Appearance: -3
 					<br />Difficulty: 7</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1203,7 +1236,7 @@
 					<br />Difficulty: 6
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crocas</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1211,7 +1244,7 @@
 					<br />Manipulation: -2
 					<br />Appearance: 0</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Hyaenid</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +2
@@ -1220,14 +1253,14 @@
 				</div>
 			</div>
 			<div class="container" id="ananasi_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Lilian</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
@@ -1236,7 +1269,7 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Pithus</h3>
 					<p><center>Strength: +4
 					<br />Dexterity: +1
@@ -1245,7 +1278,7 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crawlerling</h3>
 					<p><center>Strength: 0
 					<br />Dexterity: +5
@@ -1255,14 +1288,14 @@
 				</div>
 			</div>
 			<div class="container" id="apis_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Minotaur</h3>
 					<p><center>Strength: +5
 					<br />Dexterity: +1
@@ -1271,10 +1304,10 @@
 					<br />Manipulation: -3
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Aurochs</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +1
@@ -1283,11 +1316,11 @@
 				</div>
 			</div>
 			<div class="container" id="bagheera_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +1
@@ -1295,7 +1328,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1304,7 +1337,7 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
@@ -1312,7 +1345,7 @@
 					<br />Manipulation: -3
 					<br />Appearance: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +3
@@ -1321,11 +1354,11 @@
 				</div>
 			</div>
 			<div class="container" id="balam_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +1
@@ -1333,7 +1366,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1342,14 +1375,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
 					<br />Stamina: +3
 					<br />Manipulation: -4</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +2
@@ -1358,11 +1391,11 @@
 				</div>
 			</div>
 			<div class="container" id="bubasti_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +0
 					<br />Dexterity: +1
@@ -1370,7 +1403,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +3
@@ -1379,14 +1412,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
 					<br />Stamina: +1
 					<br />Manipulation: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: -1
 					<br />Dexterity: +4
@@ -1395,11 +1428,11 @@
 				</div>
 			</div>
 			<div class="container" id="ceilican_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +0
 					<br />Dexterity: +2
@@ -1407,7 +1440,7 @@
 					<br />Manipulation: +0
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +3
@@ -1416,7 +1449,7 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +0
 					<br />Dexterity: +4
@@ -1424,7 +1457,7 @@
 					<br />Manipulation: -2
 					<br />Appearance: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: -1
 					<br />Dexterity: +4
@@ -1432,11 +1465,11 @@
 				</div>
 			</div>
 			<div class="container" id="khan_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +1
@@ -1444,7 +1477,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1453,14 +1486,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +4
 					<br />Dexterity: +2
 					<br />Stamina: +3
 					<br />Manipulation: -3</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1469,11 +1502,11 @@
 				</div>
 			</div>
 			<div class="container" id="khara_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +1
@@ -1481,7 +1514,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +1
@@ -1490,7 +1523,7 @@
 					<br />Appearance: 0
 					<br />Incites Delirium In Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1498,7 +1531,7 @@
 					<br />Manipulation: -3
 					<br />Appearance: 0</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -1508,11 +1541,11 @@
 				</div>
 			</div>
 			<div class="container" id="pumonca_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +2
@@ -1520,7 +1553,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
@@ -1529,14 +1562,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +3
 					<br />Stamina: +2
 					<br />Manipulation: -3</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +2
@@ -1545,11 +1578,11 @@
 				</div>
 			</div>
 			<div class="container" id="qualmi_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +0
 					<br />Dexterity: +2
@@ -1557,7 +1590,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +2
@@ -1566,24 +1599,24 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
 					<br />Stamina: +2
 					<br />Manipulation: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Dexterity: +3</center></p>
 				</div>
 			</div>
 			<div class="container" id="simba_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +2
@@ -1591,7 +1624,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
@@ -1600,14 +1633,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +4
 					<br />Stamina: +2
 					<br />Manipulation: -3</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +4
@@ -1616,11 +1649,11 @@
 				</div>
 			</div>
 			<div class="container" id="swara_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sokto</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +2
@@ -1628,7 +1661,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: -1</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
@@ -1637,14 +1670,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chatro</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +4
 					<br />Stamina: +2
 					<br />Manipulation: -3</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Feline</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +4
@@ -1653,18 +1686,18 @@
 				</div>
 			</div>
 			<div class="container" id="camazotz_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Apterous</h3>
 					<p><center>Dexterity: +2
 					<br />Appearance: -1
 					<br />Manipulation: -1
 					<br />Perception: +2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +2
@@ -1674,10 +1707,10 @@
 					<br />Perception: +3
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Megachiroptera</h3>
 					<p><center>Strength: -1
 					<br />Dexterity: +2
@@ -1687,14 +1720,14 @@
 				</div>
 			</div>
 			<div class="container" id="corax_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +1
@@ -1704,10 +1737,10 @@
 					<br />Perception: +3
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Corvid</h3>
 					<p><center>Strength: -1
 					<br />Dexterity: +1
@@ -1716,11 +1749,11 @@
 				</div>
 			</div>
 			<div class="container" id="grondr_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Aperius</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +0
@@ -1728,7 +1761,7 @@
 					<br />Manipulation: -2
 					<br />Appearance: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +1
@@ -1737,7 +1770,7 @@
 					<br />Manipulation: -3
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Daeodon</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +1
@@ -1745,7 +1778,7 @@
 					<br />Appearance: 0
 					<br />Manipulation: -3</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Scrofa</h3>
 					<p><center>Strength: +2
 					<br />Stamina: +3
@@ -1754,11 +1787,11 @@
 				</div>
 			</div>
 			<div class="container" id="gurahl_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Arthren</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +0
@@ -1766,7 +1799,7 @@
 					<br />Manipulation: -2
 					<br />Appearance: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +5
 					<br />Dexterity: -1
@@ -1775,14 +1808,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Bjornen</h3>
 					<p><center>Strength: +4
 					<br />Dexterity: -2
 					<br />Stamina: +4
 					<br />Manipulation: -3</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Ursine</h3>
 					<p><center>Strength: +3
 					<br />Stamina: +3
@@ -1790,11 +1823,11 @@
 				</div>
 			</div>
 			<div class="container" id="kitsune_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sambuhenge</h3>
 					<p><center>Strength: +0
 					<br />Dexterity: +1
@@ -1802,7 +1835,7 @@
 					<br />Manipulation: -1
 					<br />Perception: +0</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +2
@@ -1811,14 +1844,14 @@
 					<br />Perception: +1
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Juko</h3>
 					<p>Dexterity: +3
 					<br />Stamina: +3
 					<br />Manipulation: -2
 					<br />Perception: +1</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Vulpine</h3>
 					<p><center>Dexterity: +4
 					<br />Stamina: +2
@@ -1827,14 +1860,14 @@
 				</div>
 			</div>
 			<div class="container" id="ao_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -1844,10 +1877,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: -1
@@ -1859,14 +1892,14 @@
 				</div>
 			</div>
 			<div class="container">
-				<div class="contained" id="champsa_forms">
+				<div class="contained3" id="champsa_forms">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -1876,10 +1909,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: -2
@@ -1888,14 +1921,14 @@
 				</div>
 			</div>
 			<div class="container" id="gharial_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -1905,10 +1938,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: -1
@@ -1917,14 +1950,14 @@
 				</div>
 			</div>
 			<div class="container" id="halpatee_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -1934,10 +1967,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: -1
@@ -1948,14 +1981,14 @@
 				</div>
 			</div>
 			<div class="container" id="karna_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -1965,10 +1998,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: -2
@@ -1977,14 +2010,14 @@
 				</div>
 			</div>
 			<div class="container" id="makara_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -1994,10 +2027,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +0
@@ -2006,14 +2039,14 @@
 				</div>
 			</div>
 			<div class="container" id="ora_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -2023,10 +2056,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +0
 					<br />Dexterity: +0
@@ -2038,14 +2071,14 @@
 				</div>
 			</div>
 			<div class="container" id="piasa_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -2055,10 +2088,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: -1
@@ -2069,14 +2102,14 @@
 				</div>
 			</div>
 			<div class="container" id="unktehi_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Archid</h3>
 					<p><center>Strength +4
  					<br />Dexterity -1
@@ -2086,10 +2119,10 @@
 					<br />Any Stat Changes Provided By Chosen Archid Characteristics
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Suchid</h3>
 					<p><center>Strength: -1
 					<br />Dexterity: +0
@@ -2101,11 +2134,11 @@
 				</div>
 			</div>
 			<div class="container" id="nagah_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Silkaram</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +0
@@ -2113,7 +2146,7 @@
 					<br />Manipulation: -2
 					<br />Appearance: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Azhi Dahaka</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: +2
@@ -2122,7 +2155,7 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Kali Dahaka</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +2
@@ -2130,7 +2163,7 @@
 					<br />Manipulation: -3
 					<br />Appearance: 0</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Vasuki</h3>
 					<p><center>Strength: -1
 					<br />Dexterity: +2
@@ -2139,11 +2172,11 @@
 				</div>
 			</div>
 			<div class="container" id="nuwisha_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Tsitsu</h3>
 					<p><center>Strength: +1
 					<br />Dexterity: +1
@@ -2151,7 +2184,7 @@
 					<br />Manipulation: -1
 					<br />Appearance: 0</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Manabozho</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
@@ -2160,14 +2193,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Sendeh</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +3
 					<br />Stamina: +3
 					<br />Manipulation: -3</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Latrani</h3>
 					<p><center>Dexterity: +3
 					<br />Stamina: +3
@@ -2175,14 +2208,14 @@
 				</div>
 			</div>
 			<div class="container" id="ratkin_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Crinos</h3>
 					<p><center>Strength: +1 (+2 for Crinos Breed)
 					<br />Dexterity: +4
@@ -2192,10 +2225,10 @@
 					<br />Perception: +1
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>N/A</h3>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Rodens</h3>
 					<p><center>Strength: -1
 					<br />Dexterity: +2
@@ -2204,11 +2237,11 @@
 				</div>
 			</div>
 			<div class="container" id="rokea_forms">
-				<div class="contained">
+				<div class="contained3">
 					<h3>Homid</h3>
 					<p>No Changes</p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Glabrus</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: +0 (+1 when in water)
@@ -2216,7 +2249,7 @@
 					<br />Manipulation: -2
 					<br />Appearance: -2</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Gladius</h3>
 					<p><center>Strength: +3
 					<br />Dexterity: -1 (+2 when in water)
@@ -2225,14 +2258,14 @@
 					<br />Appearance: 0
 					<br />Incites Delirium in Humans</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Chasmus</h3>
 					<p><center>Strength: +4
 					<br />Dexterity: N/A (+1 in water)
 					<br />Stamina: +3
 					<br />Manipulation: -4</center></p>
 				</div>
-				<div class="contained">
+				<div class="contained3">
 					<h3>Squamus</h3>
 					<p><center>Strength: +2
 					<br />Dexterity: N/A (+3 in water)
@@ -2240,12 +2273,12 @@
 					<br />Manipulation: -4</center></p>
 				</div>
 			</div>
-		</div>
-		<div class="section1">
+		</div></center>
+		<center><div class="section1">
 			<p>&nbsp;</p>
 			<h2>Combat</h2>
 			<div class="container">
-			<div class="contained">
+			<div class="contained2">
 				<h3>Melee</h3>
 				<table width="100%" border="0">
   					<tbody>
@@ -2261,7 +2294,7 @@
 			  <input type="button" value="+" name="add_melee" id="add_melee"><input type="button" value="-" name="subtract_melee" id="subtract_melee">
 			  </div>
 			</div>
-		  <div class="contained">
+		  <div class="contained2">
 			  <h3>Ranged</h3>
 			  				<table width="100%" border="0">
   					<tbody>
@@ -2275,28 +2308,28 @@
  					     </tr>
   					</tbody>
 				</table>
-			  <input type="text" size="10" id="ranged_name"><input type="text" size="10" id="ranged_pool"><input type="text" size="10" id="ranged_damagepool"><input type="text" size="10" id="gun_range"><input type="text" size="10" id="fire_rate"><input type="text" size="10" id="ammo_clip">
+			  <input type="text" size="7" id="ranged_name"><input type="text" size="5" id="ranged_pool"><input type="text" size="5" id="ranged_damagepool"><input type="text" size="5" id="gun_range"><input type="text" size="5" id="fire_rate"><input type="text" size="5" id="ammo_clip">
 			  <div>
 			  <input type="button" value="+" name="add_ranged" id="add_ranged"><input type="button" value="-" name="subtract_ranged" id="subtract_ranged">
 			  </div>
 			</div>
 			</div>
-		</div>
+		</div></center>
 		<!-- The Miscellaneous category does not appear for Hunter or General WoD, most other games have extra traits -->
-		<div class="section1" id="misc_section" style="display:none">
+		<center><div class="section1" id="misc_section" style="display:none">
 			&nbsp;
 			<h2>Miscellaneous</h2>
 			<!-- Weakness and Rituals categories are only used by Vampire -->
 			<div class="container" id="misc_vtm" style="display:none">
-				<div class="contained">
+				<div class="contained2">
 					<h3>Clan Weakness</h3>
 					<textarea></textarea>
 				</div>
-				<div class="contained">
+				<div class="contained2">
 					<h3>Blood Sorcery Rituals</h3>
 					<div class="container">
 						<div class="container">
-						<input type="text" id="input_ritual" name="ritual_input" size="10"><strong>:</strong> 
+						<input type="text" id="input_ritual" name="ritual_input" size="30"><strong>:</strong> 
 							<input type="button" id="ritualdot_add" value="+"><div class="counter">0</div><input type="button" id="ritualdot-subtract" value="-">
 							</div>
 				</div>
@@ -2307,13 +2340,13 @@
 			</div>
 			<!-- The Rites, Fetishes and Rank sections are only used by Werewolf -->
 			<div class="container" id="wta_rank" style="display:none">
-				<div class="contained">
+				<div class="contained4">
 					<h3>Rank</h3>
 					<input type="text">
 				</div>
 			</div>
 			<div class="container" id="wta_misc" style="display:none">
-				<div class="contained">
+				<div class="contained2">
 					<h3>Fetishes</h3>
 					<table class="headertable">
 						<tr>
@@ -2329,7 +2362,7 @@
 					<input type="button" value="+" name="add_fetish" id="add_fetish"><input type="button" value="-" name="subtract_fetish" id="subtract_fetish">
 					</div>
 				</div>
-				<div class="contained">
+				<div class="contained2">
 					<h3>Rites</h3>
 					<table class="headertable">
 						<tr>
@@ -2348,7 +2381,7 @@
 			</div>
 			<!-- The Rotes section is only used by Mage -->
 			<div class="container" id="mtas_misc" style="display:none">
-				<div class="contained">
+				<div class="contained4">
 					<h3>Rotes</h3>
 					<input type="text" id="rote_input" name="rote_input" size="50">
 					<div id="rotesbuttons">
@@ -2358,44 +2391,44 @@
 			</div>
 			<!-- The Birthright/Frailty, Antithesis/Nightmare and Treasures/Companions sections are only used by Changeling -->
 			<div class="container" id="ctd_misc" style="display:none">
-				<div class="contained">
+				<div class="contained1">
 					<h3>Birthrights and Frailties</h3>
-					<input type="text" id="birthright_input" name="birthright_input" size="40">
+					<input type="text" id="birthright_input" name="birthright_input" size="30">
 					<div id="birthrightbuttons">
 					<input type="button" value="+" name="add_birthright" id="add_birthright"><input type="button" value="-" name="subtract_birthright" id="subtract_birthright">
 				</div>
 				</div>
-					<div class="contained">
+					<div class="contained1">
 						<h3>Antithesis and Nightmare</h3>
 						<table>
 							<tr>
 								<th>Antithesis:</th>
-								<td><input type="text" id="input_antithesis" name="input_antithesis" size="30"></td>
+								<td><input type="text" id="input_antithesis" name="input_antithesis" size="25"></td>
 							</tr>
 							<tr>
 								<th>Nightmare:</th>
-								<td><input type="text" id="input_nightmare" name="input_nightmare" size="30"></td>
+								<td><input type="text" id="input_nightmare" name="input_nightmare" size="25"></td>
 							</tr>
 						</table>
 					</div>
-				<div class="contained">
+				<div class="contained1">
 					<h3>Treasures and Companions</h3>
-					<input type="text" id="treasure_input" name="treasure_input" size="40">
+					<input type="text" id="treasure_input" name="treasure_input" size="30">
 					<div id="treasurebuttons">
 					<input type="button" value="+" name="add_treasure" id="add_treasure"><input type="button" value="-" name="subtract_treasure" id="subtract_treasure">
 					</div>
 				</div>
 		</div>
 			<!-- The Apocalyptic Form sections are only used by Demon -->
-				<div class="container" id="dtf_misc">
-					<div class="contained">
+				<div class="container" id="dtf_misc" style="display:none">
+					<div class="contained2">
 						<h3>Apocalyptic Form Traits (Normal)</h3>
 						<input type="text" name="input_apoc_normal1" id="input_apoc_normal1" size="40">
 						<br /><input type="text" name="input_apoc_normal2" id="input_apoc_normal2" size="40">
 						<br /><input type="text" name="input_apoc_normal3" id="input_apoc_normal3" size="40">
 						<br /><input type="text" name="input_apoc_normal4" id="input_apoc_normal4" size="40">
 					</div>
-					<div class="contained">
+					<div class="contained2">
 						<h3>Apocalyptic Form Traits (Torment)</h3>
 						<input type="text" name="input_apoc_torment1" id="input_apoc_torment1" size="40">
 						<br /><input type="text" name="input_apoc_torment2" id="input_apoc_torment2" size="40">
@@ -2403,44 +2436,43 @@
 						<br /><input type="text" name="input_apoc_torment4" id="input_apoc_torment4" size="40">
 					</div>
 				</div>
-		</div>
-		<div class="section1">
+		</div></center>
+		<center><div class="section1">
 			<p>&nbsp;</p>
 			<h2>Extra</h2>
 				<div class="container">
-				<div class="contained">
+				<div class="contained1">
 					<h3>Derangements</h3>
-					<input type="text" size="46" id="input_derangement">
+					<input type="text" size="35" id="input_derangement">
 					<div>
 					<input type="button" value="+" name="add_derangement" id="add_derangement"><input type="button" value="-" name="subtract_derangement" id="subtract_derangement">
 					</div>
 				</div>
-				<div class="contained">
+				<div class="contained1">
 					<h3>Freebie Point Tracker</h3>
-					<textarea rows="15" cols="48">
+					<textarea rows="15" cols="35">
 					</textarea>
 				</div>
-				<div class="contained">
+				<div class="contained1">
 					<h3>Experience Point Total</h3>
-					<input type="text" size="46">
+					<input type="text" size="35">
 					<h3>Experience Point Tracker</h3>
-					<textarea rows="10" cols="48">
+					<textarea rows="10" cols="35">
 					</textarea>
 				</div>
 			</div>
-		</div>
-		<div class="section1">
+		</div></center>
+		<center><div class="section1">
 			<p>&nbsp;</p>
 			<h2>Character History</h2>
 			<center><textarea rows="20" cols="100"></textarea></center>
-		</div>
-		<div class="section1">
+		</div></center>
+		<center><div class="section1">
 			<p>&nbsp;</p>
 			<h2>Description</h2>
 			<center><textarea rows="20" cols="100"></textarea></center>
-		</div>
-		<input type="reset"><input type="submit">
-</div>
-
+		</div></center>
+		<center><input type="reset"><input type="submit"></center>
+	</div></center>
 </body>
 </html>
