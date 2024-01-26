@@ -31,17 +31,19 @@ th {
 	color: #2E2E2E;
 }
 .mainbody {
-	background-color: #B3B3B3;
+	background-color: #DFDFDF;
 	border: solid;
 	border-color: #6F6F6F;
 	color: #2E2E2E;
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	padding: 10px
+	padding: 10px;
+	width: 1000px;
 }
 .section1 {
 	background-color: #DFDFDF;
 	padding: inherit;
 	justify-content: center;
+	width: 990px;
 }
 .basicstable {
 	padding: 10px;
@@ -52,16 +54,16 @@ th {
 	background-color: #B3B3B3;
 	margin-left: auto;
 	margin-right: auto;
+	width: 980px;
+	align: center;
 }
 .container {
 	float: left;
 	width: 100%;
 	display:flex;
 	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
 }
-.contained {
+.contained1 {
 	background-color: #B3B3B3;
 	padding: 10px;
 	border: solid;
@@ -69,6 +71,37 @@ th {
 	float:left;
 	justify-content: center;
 	color: #2E2E2E;
+	width: 325px;
+}
+.contained2 {
+	background-color: #B3B3B3;
+	padding: 10px;
+	border: solid;
+	border-color: #6F6F6F;
+	float:left;
+	justify-content: center;
+	color: #2E2E2E;
+	width: 475px;
+}
+.contained3 {
+	background-color: #B3B3B3;
+	padding: 10px;
+	border: solid;
+	border-color: #6F6F6F;
+	float:left;
+	justify-content: center;
+	color: #2E2E2E;
+	width: 195px;
+}
+.contained4 {
+	background-color: #B3B3B3;
+	padding: 10px;
+	border: solid;
+	border-color: #6F6F6F;
+	float:left;
+	justify-content: center;
+	color: #2E2E2E;
+	width: 975px;
 }
 .counter {
 	padding-left: 10px;
