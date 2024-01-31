@@ -47,26 +47,20 @@
 			<td><input type="checkbox" id="overcap_toggle"></td>
 		</tr>
 		<tr>
-			<!-- Use Historical Settings mode to swap certain Abilities to ones more appropriate to the time period. Savage Age should only be available to select for Werewolf, other supernaturals aside from the angels that would become Demons did not exist at that time.-->
+			<!-- Use Historical Settings mode to swap certain Abilities to ones more appropriate to the time period. Modern is available for all games, Wyld West and Prehistory are only available for Werewolf, Victorian is only available for Vampire and Mage, Sorcerer's Crusade is Mage-only, Dark Ages is primarily Vampire but also exists for Werewolf, Mage, Changeling and (for some reason) Hunter, and Great War is Wraith-only.-->
 			<th rowspan="4" class="optionstable">Historical Settings:</th>
-			<td rowspan="4" colspan="3"><p>
-			  <label>
-			    <input type="radio" name="Historical Options" value="radio" id="modern_setting">
-			    Modern</label>
-			  <br>
-			  <label>
-			    <input type="radio" name="Historical Options" value="radio" id="wyld_west">
-			    Wyld West/Victorian</label>
-			  <br>
-			  <label>
-			    <input type="radio" name="Historical Options" value="radio" id="dark_ages">
-			    Dark Ages</label>
-			  <br>
-			  <label>
-			    <input type="radio" name="Historical Options" value="radio" id="savage_age" class="disabled-label" disabled>
-			    Savage Age</label>
-			  <br>
-		    </p></td>
+			<td rowspan="4" colspan="3">
+				<select>
+					<option id="modern_era">Modern (Default)</option>
+					<option id="wto_greatwar">The Great War (WtO)</option>
+					<option id="wta_wyldwest">Wyld West (WtA)</option>
+					<option id="vtm_victorian">Victorian Era (VtM)</option>
+					<option id="mtas_victorian">Victorian Era (MtAs)</option>
+					<option id="mtas_crusade">Sorcerer's Crusade (MtAs)</option>
+					<option id="darkages">Dark Ages (VtM, WtA, MtAs, CtD, HtR)</option>
+					<option id="wta_savageage">Paleolithic/Prehistoric (WtA)</option>
+				</select>
+			</td>
 		</tr>
 		</table></center>
 	<h1>Sheet Generation Test</h1>
