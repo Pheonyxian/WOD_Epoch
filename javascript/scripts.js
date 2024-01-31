@@ -16,6 +16,9 @@ function changeStylesheet(game) {
         case "vtm":
             stylesheet.href = "../styles/vtm-style.css";
             break;
+        case "wta":
+            stylesheet.href = "../styles/wta-style.css";
+            break;
         default:
             //this is what runs if the value isn't one of the above cases.
             stylesheet.href = "../styles/genwod-style.css";
