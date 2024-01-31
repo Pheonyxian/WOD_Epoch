@@ -14,7 +14,7 @@ function changeStylesheet(game) {
             stylesheet.href = "../styles/genwod-style.css";
             break;
         case "vtm":
-            stylesheet.href = "../styles/test-style.css";
+            stylesheet.href = "../styles/vtm-style.css";
             break;
         default:
             //this is what runs if the value isn't one of the above cases.
