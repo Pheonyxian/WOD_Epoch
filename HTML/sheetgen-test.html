@@ -1130,38 +1130,38 @@
 			<h2>Form Changes</h2>
 			<div class="container" id="forms_dropdown">
 				<select id="forms_menu" name="shifter_forms">
-					<option id="garou" name="shifter_forms">Garou</option>
-					<option id="ajaba" name="shifter_forms">Ajaba</option>
-					<option id="ananasi" name="shifter_forms">Ananasi</option>
-					<option id="apis" name="shifter_forms">Apis</option>
-					<option id="b_bagheera" name="shifter_forms">Bastet (Bagheera)</option>
-					<option id="b_balam" name="shifter_forms">Bastet (Balam)</option>
-					<option id="b_bubasti" name="shifter_forms">Bastet (Bubasti)</option>
-					<option id="b_ceilican" name="shifter_forms">Bastet (Ceilican)</option>
-					<option id="b_khan" name="shifter_forms">Bastet (Khan)</option>
-					<option id="b_khara" name="shifter_forms">Bastet (Khara)</option>
-					<option id="b_pumonca" name="shifter_forms">Bastet (Pumonca)</option>
-					<option id="b_qualmi" name="shifter_forms">Bastet (Qualmi)</option>
-					<option id="b_simba" name="shifter_forms">Bastet (Simba)</option>
-					<option id="b_swara" name="shifter_forms">Bastet (Swara)</option>
-					<option id="camazotz" name="shifter_forms">Camazotz</option>
-					<option id="corax" name="shifter_forms">Corax</option>
-					<option id="grondr" name="shifter_forms">Grondr</option>
-					<option id="gurahl" name="shifter_forms">Gurahl</option>
-					<option id="kitsune" name="shifter_forms">Kitsune</option>
-					<option id="m_ao" name="shifter_forms">Mokol&#0233; (Ao)</option>
-					<option id="m_champsa" name="shifter_forms">Mokol&#0233; (Champsa)</option>
-					<option id="m_gharial" name="shifter_forms">Mokol&#0233; (Gharial)</option>
-					<option id="m_halpatee" name="shifter_forms">Mokol&#0233; (Halpatee)</option>
-					<option id="m_karna" name="shifter_forms">Mokol&#0233; (Karna)</option>
-					<option id="m_makara" name="shifter_forms">Mokol&#0233; (Makara)</option>
-					<option id="m_ora" name="shifter_forms">Mokol&#0233; (Ora)</option>
-					<option id="m_piasa" name="shifter_forms">Mokol&#0233; (Piasa)</option>
-					<option id="m_unktehi" name="shifter_forms">Mokol&#0233; (Unktehi)</option>
-					<option id="nagah" name="shifter_forms">Nagah</option>
-					<option id="nuwisha" name="shifter_forms">Nuwisha</option>
-					<option id="ratkin" name="shifter_forms">Ratkin</option>
-					<option id="rokea" name="shifter_forms">Rokea</option>
+					<option value="garou" name="shifter_forms">Garou</option>
+					<option value="ajaba" name="shifter_forms">Ajaba</option>
+					<option value="ananasi" name="shifter_forms">Ananasi</option>
+					<option value="apis" name="shifter_forms">Apis</option>
+					<option value="b_bagheera" name="shifter_forms">Bastet (Bagheera)</option>
+					<option value="b_balam" name="shifter_forms">Bastet (Balam)</option>
+					<option value="b_bubasti" name="shifter_forms">Bastet (Bubasti)</option>
+					<option value="b_ceilican" name="shifter_forms">Bastet (Ceilican)</option>
+					<option value="b_khan" name="shifter_forms">Bastet (Khan)</option>
+					<option value="b_khara" name="shifter_forms">Bastet (Khara)</option>
+					<option value="b_pumonca" name="shifter_forms">Bastet (Pumonca)</option>
+					<option value="b_qualmi" name="shifter_forms">Bastet (Qualmi)</option>
+					<option value="b_simba" name="shifter_forms">Bastet (Simba)</option>
+					<option value="b_swara" name="shifter_forms">Bastet (Swara)</option>
+					<option value="camazotz" name="shifter_forms">Camazotz</option>
+					<option value="corax" name="shifter_forms">Corax</option>
+					<option value="grondr" name="shifter_forms">Grondr</option>
+					<option value="gurahl" name="shifter_forms">Gurahl</option>
+					<option value="kitsune" name="shifter_forms">Kitsune</option>
+					<option value="m_ao" name="shifter_forms">Mokol&#0233; (Ao)</option>
+					<option value="m_champsa" name="shifter_forms">Mokol&#0233; (Champsa)</option>
+					<option value="m_gharial" name="shifter_forms">Mokol&#0233; (Gharial)</option>
+					<option value="m_halpatee" name="shifter_forms">Mokol&#0233; (Halpatee)</option>
+					<option value="m_karna" name="shifter_forms">Mokol&#0233; (Karna)</option>
+					<option value="m_makara" name="shifter_forms">Mokol&#0233; (Makara)</option>
+					<option value="m_ora" name="shifter_forms">Mokol&#0233; (Ora)</option>
+					<option value="m_piasa" name="shifter_forms">Mokol&#0233; (Piasa)</option>
+					<option value="m_unktehi" name="shifter_forms">Mokol&#0233; (Unktehi)</option>
+					<option value="nagah" name="shifter_forms">Nagah</option>
+					<option value="nuwisha" name="shifter_forms">Nuwisha</option>
+					<option value="ratkin" name="shifter_forms">Ratkin</option>
+					<option value="rokea" name="shifter_forms">Rokea</option>
 				</select>
 			</div>
 			<div class="container" id="garou_forms">
@@ -2466,6 +2466,81 @@
 			<h2>Description</h2>
 			<center><textarea rows="20" cols="100"></textarea></center>
 		</div></center>
+		<!-- The Shadow section only applies to Wraith sheets.-->
+			<center><div class="section1" id="shadowcard" style="display:none">
+				<h2>The Shadow</h2>
+				<table class="shadowtable">
+					<tr>
+						<th class="shadowheader">Psyche:</th>
+						<td><input type="text" id="wto_shadow_psyche"></td>
+						<th class="shadowheader">Shadowguide:</th>
+						<td><input type="text" id="wto_shadow_guide"></td>
+						<th class="shadowheader">Archetype:</th>
+						<td><input type="text" id="wto_shadow_archetype"></td>
+					</tr>
+				</table>
+				<div class="container">
+					<div class="shadowcontained">
+						<h3>Thorns</h3>
+						<div class="container">
+						<input type="text" id="input_thorn" name="power_thorn" size ="30">
+				</div>
+				<div id="thornbuttons">
+				<input type="button" value="+" name="add_thorn" id="add_thorn"><input type="button" value="-" name="subtract_thorn" id="subtract_thorn">
+				</div>
+					</div>
+					<div class="shadowcontained">
+						<h3>Other Stats</h3>
+						<table>
+							<tr>
+								<th class="shadowheader">Permanent Angst</th>
+								<td><div class="container">
+							<input type="button" id="permangst_add" value="+"><div class="counter">0</div><input type="button" id="permangst-subtract" value="-">
+						</div></td>
+							</tr>
+							<tr>
+								<th class="shadowheader">Temporary Angst</th>
+								<td><div class="container">
+							<input type="button" id="tempangst_add" value="+"><div class="counter">0</div><input type="button" id="tempangst-subtract" value="-">
+						</div></td>
+							</tr>
+							<tr>
+								<!-- The Psyche Willpower should pull the number listed in the main Wraith Willpower section and print based on that number. -->
+								<th class="shadowheader">Psyche's Willpower</th>
+								<td><div class="counter">0</div></td>
+							</tr>
+							<tr>
+								<th colspan="2" class="shadowheader">Shadow Experience</th>
+							</tr>
+							<tr>
+								<td colspan="2"><center><input type="text"></center></td>
+							</tr>
+						</table>
+					</div>
+					<div class="shadowcontained">
+						<h3>Dark Passions</h3>
+						<div class="container">
+						<input type="text" id="input_darkpassion" name="darkpassion_input" size=""><strong>:</strong> 
+							<input type="button" id="darkpassiondot_add" value="+"><div class="counter">0</div><input type="button" id="darkpassiondot-subtract" value="-">
+				</div>
+				<div id="darkpassionbuttons">
+				<input type="button" value="+" name="add_darkpassion" id="add_darkpassion"><input type="button" value="-" name="subtract_darkpassion" id="subtract_darkpassion">
+				</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="shadowcontained2">
+						<h3>Shadow Experience Track</h3>
+						<textarea rows="10" cols="50"></textarea>
+					</div>
+					<div class="shadowcontained2">
+						<h3>Shadow Description</h3>
+						<textarea rows="10" cols="50"></textarea>
+					</div>
+				</div>
+				<br />
+			</div>
+		</center>
 		<center><input type="reset"><input type="submit"></center>
 	</div></center>
 </body>

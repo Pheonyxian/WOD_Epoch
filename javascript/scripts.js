@@ -19,6 +19,24 @@ function changeStylesheet(game) {
         case "wta":
             stylesheet.href = "../styles/wta-style.css";
             break;
+        case "mtas":
+            stylesheet.href = "../styles/mtas-style.css";
+            break;
+        case "wto":
+            stylesheet.href = "../styles/wto-style.css";
+            break;
+        case "ctd":
+             stylesheet.href = "../styles/ctd-style.css";
+            break;
+        case "htr":
+            stylesheet.href = "../styles/htr-style.css";
+            break;
+        case "mtr":
+            stylesheet.href = "../styles/mtr-style.css";
+            break;
+         case "dtf":
+            stylesheet.href = "../styles/dtf-style.css";
+            break;
         default:
             //this is what runs if the value isn't one of the above cases.
             stylesheet.href = "../styles/genwod-style.css";
