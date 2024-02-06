@@ -4,14 +4,6 @@
 	<meta charset="utf-8">
 	<link id="stylesheet" href="../styles/genwod-style.css" rel="stylesheet" type="text/css">
 	<script src="../javascript/scripts.js" defer></script>
-	<style>
-        /* Style for disabled radio button label */
-		/* This isn't working and I don't know why */
-        .disabled-label {
-            color: #808080; /* Grey color */
-            cursor: not-allowed; /* Change cursor to indicate not selectable */
-        }
-    </style>
 </head>
 
 <body>
@@ -50,15 +42,15 @@
 			<!-- Use Historical Settings mode to swap certain Abilities to ones more appropriate to the time period. Modern is available for all games, Wyld West and Prehistory are only available for Werewolf, Victorian is only available for Vampire and Mage, Sorcerer's Crusade is Mage-only, Dark Ages is primarily Vampire but also exists for Werewolf, Mage, Changeling and (for some reason) Hunter, and Great War is Wraith-only.-->
 			<th rowspan="4" class="optionstable">Historical Settings:</th>
 			<td rowspan="4" colspan="3">
-				<select>
-					<option id="modern_era">Modern (Default)</option>
-					<option id="wto_greatwar">The Great War (WtO)</option>
-					<option id="wta_wyldwest">Wyld West (WtA)</option>
-					<option id="vtm_victorian">Victorian Era (VtM)</option>
-					<option id="mtas_victorian">Victorian Era (MtAs)</option>
-					<option id="mtas_crusade">Sorcerer's Crusade (MtAs)</option>
-					<option id="darkages">Dark Ages (VtM, WtA, MtAs, CtD, HtR)</option>
-					<option id="wta_savageage">Paleolithic/Prehistoric (WtA)</option>
+				<select id="ageDropdown" onchange="gameChanged()">
+					<option value="modern_era">Modern (Default)</option>
+					<option value="wto_greatwar" disabled>The Great War (WtO)</option>
+					<option value="wta_wyldwest" disabled>Wyld West (WtA)</option>
+					<option value="vtm_victorian" disabled>Victorian Era (VtM)</option>
+					<option value="mtas_victorian" disabled>Victorian Era (MtAs)</option>
+					<option value="mtas_crusade" disabled>Sorcerer's Crusade (MtAs)</option>
+					<option value="darkages" disabled>Dark Ages (VtM, WtA, MtAs, CtD, HtR)</option>
+					<option value="wta_savageage" disabled>Paleolithic/Prehistoric (WtA)</option>
 				</select>
 			</td>
 		</tr>

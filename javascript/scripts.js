@@ -1,9 +1,17 @@
 function gameChanged() {
     var game = document.getElementById("game_id").value;
+    let ageDropdown = document.getElementById("ageDropdown");
+    let age = ageDropdown.value;
+
+    if(isSelectedGameAndAgeCompatible(game, age) == false) {
+        age = "wod_gen";
+        ageDropdown.selectedIndex = 0;
+    }
+
     changeBasicsTable(game);
     changeAbilitiesTable(game);
     showAdditionalAbilityRows(game);
-    shouldEnableSavageAge(game);
+    enableHistoricalAges(game);
     changeStylesheet(game);
 }
 
@@ -28,16 +36,84 @@ function changeStylesheet(game) {
     }
 }
 
-function shouldEnableSavageAge(game) {
-    var radioButton = document.querySelector('input[id="savage_age"]');
-    var radioButtonLabel = document.getElementById("savage_age");
-    if(game == "wta") {
-        radioButton.disabled = false;
-        radioButtonLabel.classList.remove("disabled-label");
+function enableHistoricalAges(game) {
+    /*
+    Options in order:
+    0. Modern
+    1. The Great War (WtO)
+    2. Wyld West (WtA)
+    3. Victorian Era (VtM)
+    4. Victorian Era (MtA)
+    5. Sorcerer's Crusade (MtA)
+    6. Dark Ages (VtM, WtA, oMtA, CtD, HtR)
+    7. Prehistoric (WtA)
+    */
+
+    let ageDropdown = document.getElementById("ageDropdown");
+    // Loop through options 1 to 7 and disable them
+    for (var i = 1; i <= 7; i++) {
+        ageDropdown.options[i].disabled = true;
     }
-    else {
-        radioButton.disabled = true;
-        radioButtonLabel.classList.add("disabled-label");
+
+    //re-enable the ones that we want
+    switch(game) {
+        case "wod_gen":
+            break;
+        case "vtm":
+            ageDropdown.options[3].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "wta":
+            ageDropdown.options[2].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            ageDropdown.options[7].disabled = false;
+            break;
+        case "omage":
+            ageDropdown.options[4].disabled = false;
+            ageDropdown.options[5].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "wrto":
+            ageDropdown.options[1].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "ctd":
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "htr":
+        case "htr20_mrgone":
+        case "htr20_epoch":
+            ageDropdown.options[6].disabled = false;
+            break;
+        default:
+            //The demon games get nothing
+            break;
+    }
+}
+
+function isSelectedGameAndAgeCompatible(game, age) {
+    switch(age) {
+        case "modern_era":
+            return true;
+        case "wto_greatwar":
+            return game == "wrto";
+        case "wta_wyldwest":
+            return game == "wta";
+        case "vtm_victorian":
+            return game == "vtm";
+        case "mtas_victorian":
+            return game == "omage";
+        case "mtas_crusade":
+            return game == "omage";
+        case "darkages":
+            if(game == "wrto" || game == "dtf" || game == "dtf20") {
+                return false;
+            } 
+            return true;
+        case "wta_savageage":
+            return game == "wta";
+        default:
+            return false;
     }
 }
 
@@ -511,13 +587,11 @@ function changeAbilitiesTable(game) {
 }
 
 function changeAbilitiesAgeModifier() {
-    var isSavageAge = document.querySelector('input[id="savage_age"]').checked;
-    var isDarkAge = document.querySelector('input[id="dark_ages"]').checked;
-    var isWyldAge = document.querySelector('input[id="wyld_west"]').checked;
+    var age = document.getElementById("ageDropdown").value;
 
     var knowledges1 = document.getElementById("knowledge1_label");
     
-    if(isSavageAge) {
+    if(age == "wta_savageage") {
         var knowledges2 = document.getElementById("knowledge2_label");
         var skill3 = document.getElementById("skill3_label");
         var skill5 = document.getElementById("skill5_label");
@@ -529,7 +603,7 @@ function changeAbilitiesAgeModifier() {
         skill5.textContent = "Territory:";
         talent9.textContent = "Thrown:";
     }
-    else if(isDarkAge) {
+    else if(age == "darkages") {
         var knowledges2 = document.getElementById("knowledge2_label");
         var knowledges9 = document.getElementById("knowledge9_label");
         var knowledges10 = document.getElementById("knowledge10_label");
@@ -545,7 +619,7 @@ function changeAbilitiesAgeModifier() {
         knowledges9.textContent = "Seneschal:";
         knowledges10.textContent = "Sail:";
     }
-    else if(isWyldAge) {
+    else if(age == "wta_wyldwest") {
         var skill3 = document.getElementById("skill3_label");
 
         knowledges1.textContent = "Academics";
@@ -564,7 +638,7 @@ function showAdditionalAbilityRows(game) {
 
     elementsToToggle.forEach(function(elementId) {
         var element = document.getElementById(elementId);
-        element.style.display = shouldHide ? "none" : "inline";
+        element.style.display = shouldShow ? "inline" : "none";
     });
 }
 
