@@ -1,7 +1,17 @@
 function gameChanged() {
     var game = document.getElementById("game_id").value;
+    let ageDropdown = document.getElementById("ageDropdown");
+    let age = ageDropdown.value;
+
+    if(isSelectedGameAndAgeCompatible(game, age) == false) {
+        age = "wod_gen";
+        ageDropdown.selectedIndex = 0;
+    }
+
     changeBasicsTable(game);
-    shouldEnableSavageAge(game);
+    changeAbilitiesTable(game);
+    showAdditionalAbilityRows(game);
+    enableHistoricalAges(game);
     changeStylesheet(game);
 }
 
@@ -26,16 +36,84 @@ function changeStylesheet(game) {
     }
 }
 
-function shouldEnableSavageAge(game) {
-    var radioButton = document.querySelector('input[id="savage_age"]');
-    var radioButtonLabel = document.getElementById("savage_age");
-    if(game == "wta") {
-        radioButton.disabled = false;
-        radioButtonLabel.classList.remove("disabled-label");
+function enableHistoricalAges(game) {
+    /*
+    Options in order:
+    0. Modern
+    1. The Great War (WtO)
+    2. Wyld West (WtA)
+    3. Victorian Era (VtM)
+    4. Victorian Era (MtA)
+    5. Sorcerer's Crusade (MtA)
+    6. Dark Ages (VtM, WtA, oMtA, CtD, HtR)
+    7. Prehistoric (WtA)
+    */
+
+    let ageDropdown = document.getElementById("ageDropdown");
+    // Loop through options 1 to 7 and disable them
+    for (var i = 1; i <= 7; i++) {
+        ageDropdown.options[i].disabled = true;
     }
-    else {
-        radioButton.disabled = true;
-        radioButtonLabel.classList.add("disabled-label");
+
+    //re-enable the ones that we want
+    switch(game) {
+        case "wod_gen":
+            break;
+        case "vtm":
+            ageDropdown.options[3].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "wta":
+            ageDropdown.options[2].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            ageDropdown.options[7].disabled = false;
+            break;
+        case "omage":
+            ageDropdown.options[4].disabled = false;
+            ageDropdown.options[5].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "wrto":
+            ageDropdown.options[1].disabled = false;
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "ctd":
+            ageDropdown.options[6].disabled = false;
+            break;
+        case "htr":
+        case "htr20_mrgone":
+        case "htr20_epoch":
+            ageDropdown.options[6].disabled = false;
+            break;
+        default:
+            //The demon games get nothing
+            break;
+    }
+}
+
+function isSelectedGameAndAgeCompatible(game, age) {
+    switch(age) {
+        case "modern_era":
+            return true;
+        case "wto_greatwar":
+            return game == "wrto";
+        case "wta_wyldwest":
+            return game == "wta";
+        case "vtm_victorian":
+            return game == "vtm";
+        case "mtas_victorian":
+            return game == "omage";
+        case "mtas_crusade":
+            return game == "omage";
+        case "darkages":
+            if(game == "wrto" || game == "dtf" || game == "dtf20") {
+                return false;
+            } 
+            return true;
+        case "wta_savageage":
+            return game == "wta";
+        default:
+            return false;
     }
 }
 
@@ -134,8 +212,10 @@ function changeBasicsTable(game) {
     }
 }
 
+//I know doing it this way creates a lot of duplicate code, but in
+//my experience it's the most readable and creates fewer bugs
 function changeAbilitiesTable(game) {
-    //var talent1 = document.getElementById("talent1_label");
+    //var talent1 = document.getElementById("talent1_label"); //Doesn't change except in age modifier
     var talent2 = document.getElementById("talent2_label");
     var talent3 = document.getElementById("talent3_label");
     var talent4 = document.getElementById("talent4_label");
@@ -157,7 +237,7 @@ function changeAbilitiesTable(game) {
     var skill9 = document.getElementById("skill9_label");
     var skill10 = document.getElementById("skill10_label");
 
-    //var knowledges1 = document.getElementById("knowledge1_label");
+    //var knowledges1 = document.getElementById("knowledge1_label"); //Doesn't change
     var knowledges2 = document.getElementById("knowledge2_label");
     var knowledges3 = document.getElementById("knowledge3_label");
     var knowledges4 = document.getElementById("knowledge4_label");
@@ -174,105 +254,401 @@ function changeAbilitiesTable(game) {
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Finance:";
+            talent4.textContent = "Brawl:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Empathy:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Expression:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intimidation:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Technology:";
             break;
         case "vtm":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Finance:";
+            talent4.textContent = "Brawl:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Empathy:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Expression:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intimidation:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Technology:";
             break;
         case "wta":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Enigmas:";
+            talent4.textContent = "Empathy:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Expression:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Intimidation:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Leadership:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Primal-Urge:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Rituals:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Technology:";
             break;
         case "omage":
             skill1.textContent = "Crafts:";
             talent2.textContent = "Art:";
             skill2.textContent = "Drive:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Athletics:";
+            skill3.textContent = "Etiquette:";
+            knowledges3.textContent = "Cosmology:";
+            talent4.textContent = "Awareness:";
+            skill4.textContent = "Firearms:";
+            knowledges4.textContent = "Enigmas:";
+            talent5.textContent = "Brawl:";
+            skill5.textContent = "Martial Arts:";
+            knowledges5.textContent = "Esoterica:";
+            talent6.textContent = "Empathy:";
+            skill6.textContent = "Meditation:";
+            knowledges6.textContent = "Investigation:";
+            talent7.textContent = "Intimidation:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Law:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Research:";
+            knowledges8.textContent = "Medicine:";
+            talent9.textContent = "Leadership:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Occult:";
+            talent10.textContent = "Streetwise:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Politics:";
             break;
         case "wrto":
             skill1.textContent = "Crafts:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Drive:";
             knowledges2.textContent = "Beaurocracy:";
+            talent3.textContent = "Awareness:";
+            skill3.textContent = "Etiquette:";
+            knowledges3.textContent = "Computer:";
+            talent4.textContent = "Brawl:";
+            skill4.textContent = "Firearms:";
+            knowledges4.textContent = "Enigmas:";
+            talent5.textContent = "Empathy:";
+            skill5.textContent = "Larceny:";
+            knowledges5.textContent = "Investigation:";
+            talent6.textContent = "Expression:";
+            skill6.textContent = "Leadership:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intimidation:";
+            skill7.textContent = "Meditation:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Persuasion:";
+            skill8.textContent = "Melee:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Performance:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Stealth:";
+            knowledges10.textContent = "Technology:";
             break;
         case "ctd":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Enigmas:";
+            talent4.textContent = "Empathy:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Gremayre:";
+            talent5.textContent = "Expression:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Investigation:";
+            talent6.textContent = "Intimidation:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Law:";
+            talent7.textContent = "Kenning:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Medicine:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Technology:";
             break;
         case "htr":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Finance:";
+            talent4.textContent = "Empathy:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Expression:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Intimidation:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intuition:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Technology:";
             break;
         case "htr20_mrgone":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Finance:";
+            talent4.textContent = "Empathy:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Expression:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Intimidation:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intuition:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Technology:";
             break;
         case "htr20_epoch":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Brawl:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Finance:";
+            talent4.textContent = "Empathy:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Expression:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Intimidation:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intuition:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Science:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Technology:";
             break;
         case "dtf":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Finance:";
+            talent4.textContent = "Brawl:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Empathy:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Expression:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intimidation:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Religion:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Science:";
             break;
         case "dtf20":
             skill1.textContent = "Animal Ken:";
             talent2.textContent = "Athletics:";
             skill2.textContent = "Crafts:";
             knowledges2.textContent = "Computer:";
+            talent3.textContent = "Awareness:";
+            skill3.textContent = "Drive:";
+            knowledges3.textContent = "Finance:";
+            talent4.textContent = "Brawl:";
+            skill4.textContent = "Etiquette:";
+            knowledges4.textContent = "Investigation:";
+            talent5.textContent = "Empathy:";
+            skill5.textContent = "Firearms:";
+            knowledges5.textContent = "Law:";
+            talent6.textContent = "Expression:";
+            skill6.textContent = "Larceny:";
+            knowledges6.textContent = "Medicine:";
+            talent7.textContent = "Intimidation:";
+            skill7.textContent = "Melee:";
+            knowledges7.textContent = "Occult:";
+            talent8.textContent = "Leadership:";
+            skill8.textContent = "Performance:";
+            knowledges8.textContent = "Politics:";
+            talent9.textContent = "Streetwise:";
+            skill9.textContent = "Stealth:";
+            knowledges9.textContent = "Religion:";
+            talent10.textContent = "Subterfuge:";
+            skill10.textContent = "Survival:";
+            knowledges10.textContent = "Science:";
             break;
         default:
             break;
     }
-    changeAbilitiesSavageAge();
+    changeAbilitiesAgeModifier();
 
 }
 
-function changeAbilitiesSavageAge() {
-    var shouldChange = document.querySelector('input[id="savage_age"]').checked;
+function changeAbilitiesAgeModifier() {
+    var age = document.getElementById("ageDropdown").value;
+
     var knowledges1 = document.getElementById("knowledge1_label");
-    var knowledges2 = document.getElementById("knowledge2_label");
-    if(shouldChange) {
+    
+    if(age == "wta_savageage") {
+        var knowledges2 = document.getElementById("knowledge2_label");
+        var skill3 = document.getElementById("skill3_label");
+        var skill5 = document.getElementById("skill5_label");
+        var talent9 = document.getElementById("talent9_label");
+
         knowledges1.textContent = "Hearth Wisdom:";
-        knowledges2.textContent = "Legends";
+        knowledges2.textContent = "Legends:";
+        skill3.textContent = "Hunting:";
+        skill5.textContent = "Territory:";
+        talent9.textContent = "Thrown:";
+    }
+    else if(age == "darkages") {
+        var knowledges2 = document.getElementById("knowledge2_label");
+        var knowledges9 = document.getElementById("knowledge9_label");
+        var knowledges10 = document.getElementById("knowledge10_label");
+        var skill3 = document.getElementById("skill3_label");
+        var skill5 = document.getElementById("skill5_label");
+        var talent9 = document.getElementById("talent9_label");
+
+        knowledges1.textContent = "Academics";
+        knowledges2.textContent = "Hearth Wisdom:";
+        skill3.textContent = "Ride:";
+        skill5.textContent = "Archery:";
+        talent9.textContent = "Legerdemain:";
+        knowledges9.textContent = "Seneschal:";
+        knowledges10.textContent = "Sail:";
+    }
+    else if(age == "wta_wyldwest") {
+        var skill3 = document.getElementById("skill3_label");
+
+        knowledges1.textContent = "Academics";
+        skill3.textContent = "Ride:";
     }
     else {
-        knowledges1.textContent = "Academics";
-        //knowledges2 varies by game and is set in changeAbilitiesTable()
+        knowledges1.textContent = "Academics:";
     }
+}
+
+function showAdditionalAbilityRows(game) {
+    var shouldShow = game == "dtf" || game == "htr" || game == "omage";
+    var elementsToToggle = ["talent11_label", "talent11_dots", "skill11_label", "skill11_dots", 
+        "knowledge11_label", "knowledge11_dots", "talent12_label", "talent12_dots", "skill12_label", 
+        "skill12_dots", "knowledge12_label", "knowledge12_dots"];
+
+    elementsToToggle.forEach(function(elementId) {
+        var element = document.getElementById(elementId);
+        element.style.display = shouldShow ? "inline" : "none";
+    });
 }
 
 function shouldHideWtaExtras(shouldHide) {
-    var natureCat = document.getElementById("wta_naturecat");
-    var nature = document.getElementById("wta_nature");
-    var demeanorCat = document.getElementById("wta_demeanorcat");
-    var demeanor = document.getElementById("wta_demeanor");
-    if(shouldHide) {
-        natureCat.style.display = "none";
-        nature.style.display = "none";
-        demeanorCat.style.display = "none";
-        demeanor.style.display = "none";
-    }
-    else {
-        natureCat.style.display = "inline";
-        nature.style.display = "inline";
-        demeanorCat.style.display = "inline";
-        demeanor.style.display = "inline";
-    }
+    var elementsToToggle = ["wta_naturecat", "wta_nature", "wta_demeanorcat", "wta_demeanor"];
+
+    elementsToToggle.forEach(function(elementId) {
+        var element = document.getElementById(elementId);
+        element.style.display = shouldHide ? "none" : "inline";
+    });
 }
 
 function addValue(id) {
